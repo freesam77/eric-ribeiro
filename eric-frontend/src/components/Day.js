@@ -40,6 +40,8 @@ function onDelete() {
 <table width = "70%" className ="table-display" border = "1px">
   
   <tr>
+    <td>{props.name}</td>
+    <td>{props.phoneNumber}</td>
     <td>{props.date}</td>
     <td>{props.productName}</td>
     <td>{props.time}</td>

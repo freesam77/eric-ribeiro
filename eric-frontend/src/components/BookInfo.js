@@ -70,9 +70,6 @@ render(){
     
     
     
-    const style = {
-        background: "linear-gradient(rgba(120, 120, 120, 120) 1%, rgb(147, 147, 147) 0%, rgba(0, 0, 0, 0) 100%)",
-    }
     
     let day = this.props.day
     let timeslot = this.props.timeslot
@@ -82,7 +79,22 @@ render(){
     let productName = this.props.productName
     let price = this.props.price
     let available = this.props.available
+
+
+    // let selectStyle = '';
     
+
+    // if(available === 'Not Selected'){
+    //     selectStyle = {
+    //         color: '#212529'
+    //     }
+    // }else{
+    //     selectStyle = {
+    //         color: '#d3d3d3'
+    //     }
+    // }
+
+
     
     
     return (

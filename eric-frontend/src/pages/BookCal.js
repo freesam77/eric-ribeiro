@@ -102,6 +102,7 @@ class BookCal extends Component {
       
       <Col md="12" lg="6">
       <Calendar
+        style={{margin: 100}}
         accentColor={'green'}
         orientation={'flex-col'}
         showHeader={false}

@@ -48,7 +48,7 @@ export default class AdminBoard extends React.Component {
   }      
 
 
-    axios.get(url+'/dates', config)
+    axios.get('/dates', config)
     .then( response => {
       const newDays = response.data.days.map((day, i) => {
         return {
@@ -72,7 +72,7 @@ export default class AdminBoard extends React.Component {
 
     .catch(error => console.log('BAD', error))
 
-    fetch('http://localhost:8081/orders')
+    fetch('/orders')
     .then(resp => resp.json())
     .then((data) => {
       this.setState({orders:data})

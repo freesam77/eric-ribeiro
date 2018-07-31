@@ -1,10 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './CarouselComponent.css';
-import {
-  Jumbotron,
-  UncontrolledCarousel,
-} from 'reactstrap';
+import {Jumbotron,UncontrolledCarousel,} from 'reactstrap';
 
 const items = [
   {

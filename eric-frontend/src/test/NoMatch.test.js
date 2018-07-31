@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NoMatch from './NoMatch';
+import NoMatch from '../components/NoMatch';
 
 it('renders an h1 heading', () => {
   const h1 = document.createElement('h1');

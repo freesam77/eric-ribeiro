@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css'
+import '../styles/About.css'
 import { Media, Row, Col } from 'reactstrap';
 
 class About extends React.Component {

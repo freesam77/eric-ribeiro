@@ -9,30 +9,32 @@ import Services from './pages/Services';
 import AdminBoard from './pages/AdminBoard';
 import Reset from './components/Reset';
 import Forgot from './components/Forgot';
-
-import BookCal from './pages/BookCal';
 import SignUpForm from './components/SignUpForm';
 import NoMatch from './components/NoMatch';
-import axios from 'axios';
+
 
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      services: []
+      orders: [],
+      
     }
   }
 
   componentDidMount() {
-    axios
-    .get('http://localhost:8081/services')
-    .then(res => this.setState({ services: res.data.services }))
-    .catch(err => console.log(err));
-    //console.log(this.state)
+    fetch('http://localhost:8081/services')
+    .then(resp => resp.json())
+    .then((data) => {
+      this.setState({orders:data.services})
+    }, )
+   .catch(err => console.log("Wrong urls",err))
+
   }
 
   render() {
+  
     return (
       <Router>
         <div className="app">
@@ -42,18 +44,16 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={CarouselComponent} />
               <Route exact path='/about' component={About} />
-              <Route exact path='/booking/:serviceName/:serviceDuration/:servicePrice' render={
-                  () => <BookCal />
-                }/>
               <Route exact path='/admin' component={AdminBoard} />
               <Route exact path='/reset' component={Reset} />
 
               <Route exact path='/forgot' component={Forgot} />
 
               <Route exact path='/signup' component={SignUpForm} />
-              <Route exact path='/service' render={
-                  () => <Services services={this.state.services} />
+              <Route path='/service' render={
+                  () => <Services orders={this.state.orders} />
                 }/>
+              
               <Route component={NoMatch} />
             </Switch>
           </main>

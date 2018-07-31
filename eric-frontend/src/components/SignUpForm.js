@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Board.css";
+import "../styles/Board.css";
 import axios from 'axios'
 const url = 'https://calendar-booking-api.herokuapp.com'
 

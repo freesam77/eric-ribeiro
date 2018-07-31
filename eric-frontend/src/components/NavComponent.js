@@ -1,13 +1,13 @@
 import React from 'react';
-import './NavComponent.css';
+import '../styles/NavComponent.css';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink} from 'reactstrap';
+  NavLink
+} from 'reactstrap';
 
 class NavComponent extends React.Component {
   constructor(props) {

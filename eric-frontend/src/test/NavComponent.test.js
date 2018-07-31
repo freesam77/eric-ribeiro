@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavComponent from './NavComponent';
+import NavComponent from '../components/NavComponent';
 
 it('renders header', () => {
   const span = document.createElement('span');

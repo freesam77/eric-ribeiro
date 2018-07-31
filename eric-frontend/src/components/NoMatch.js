@@ -1,5 +1,5 @@
 import React from 'react';
-import './NoMatch.css';
+import '../styles/NoMatch.css';
 import { Button } from 'reactstrap';
 
 class NoMatch extends React.Component {

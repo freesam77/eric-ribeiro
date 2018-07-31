@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Reset.css";
 import axios from 'axios'
 // const url = 'https://calendar-booking-api.herokuapp.com'
 
@@ -44,7 +43,7 @@ export default class Reset extends Component {
           headers: { 'Access-Control-Allow-Origin': '*' ,'Content-Type':'application/json' }, newValidation
         }      
    
-           console.log('event',newValidation)
+           
     axios.post("http://localhost:4000/user/reset/"+this.state.tokenReset, config )
     .then(res => {      
 

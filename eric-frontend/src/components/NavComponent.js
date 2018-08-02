@@ -1,13 +1,13 @@
 import React from 'react';
-import './NavComponent.css';
+import '../styles/NavComponent.css';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink} from 'reactstrap';
+  NavLink
+} from 'reactstrap';
 
 class NavComponent extends React.Component {
   constructor(props) {
@@ -45,20 +45,20 @@ class NavComponent extends React.Component {
                   <NavLink href="/service">Bookings</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">Blog</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/signup">SignUp</NavLink>
+                  <NavLink href="/signup">Sign Up</NavLink>
                 </NavItem>
                  <NavItem>
                   <NavLink href="/admin">Login</NavLink>
                 </NavItem>
+<<<<<<< HEAD
                 <NavItem>
                   <NavLink href="/reset">Reset</NavLink>
                 </NavItem>
                  <NavItem>
                   <NavLink href="/forgot">Forgot</NavLink>
                 </NavItem>
+=======
+>>>>>>> d47d4e5253c6d3986330dde6e7ee109d3f0be6fe
               </Nav>
             </Collapse>
           </Navbar>

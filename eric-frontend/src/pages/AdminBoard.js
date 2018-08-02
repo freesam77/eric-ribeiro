@@ -1,12 +1,14 @@
 import React from "react";
+<<<<<<< HEAD
 import "./AdminBoard.css";
+=======
+import "../styles/AdminBoard.css";
+>>>>>>> d47d4e5253c6d3986330dde6e7ee109d3f0be6fe
 import DayList from "../components/DayList";
 import Form from "../components/Form";
 import Board from "../components/Board";
 
-import axios from "axios"
 const url = 'https://calendar-booking-api.herokuapp.com'
-// const urlLocal = 'http://localhost:4000/dates'
 
 export default class AdminBoard extends React.Component {
   
@@ -16,6 +18,7 @@ export default class AdminBoard extends React.Component {
     shouldHide: Boolean,
     orders: []
   }
+<<<<<<< HEAD
   
   handleLogout = event => {
     localStorage.removeItem('token');
@@ -125,3 +128,56 @@ export default class AdminBoard extends React.Component {
         );
       }
     }
+=======
+
+    handleLogout = event => {
+      localStorage.removeItem('token');
+     window.location.reload()
+
+     const tk = Object.assign({}, this.state, {
+        token: false
+
+      })
+     return this.setState(tk)
+
+   };
+ 
+    componentDidMount() {
+      const token = localStorage.getItem('token');
+      
+      if (token != null) { this.setState({shouldHide: false}) }
+
+      console.log('token', token) 
+      fetch('http://localhost:8081/orders')
+      .then(resp => resp.json())
+      .then((data) => {
+        this.setState({orders:data})
+      }, )
+      .catch(err => console.log("Wrong urls",err))
+    }
+
+  render() {
+        //console.log(this.state.orders)
+    return (
+      <div key={this.board} className='board'>
+        <div className={this.state.shouldHide ? 'login' : "hidden"}>
+          <Board key={this.admin}/>
+        </div>
+        <div className={this.state.shouldHide ? 'hidden' : "board"}>
+          <div className='logout'>
+            <button bssize="large" type="button" onClick={this.handleLogout}>Logout</button>
+          </div>
+          <br />
+          <div className={this.state.shouldHide ? 'hidden' : "Form"}>
+            <br />
+            <Form key={this.form}/>
+            <br />
+            <DayList key={this.order} days={this.state.orders} />
+          </div>
+        </div>
+      </div>
+  
+    );
+  }
+}
+>>>>>>> d47d4e5253c6d3986330dde6e7ee109d3f0be6fe

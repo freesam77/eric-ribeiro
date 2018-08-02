@@ -1,11 +1,15 @@
 import React from "react";
-import "./Day.css";
+import "../styles/Day.css";
 import axios from "axios";
+<<<<<<< HEAD
 // import PropTypes from "prop-types";
 
 // const url = 'http://localhost:4000'
 
 const url = 'https://calendar-booking-api.herokuapp.com'
+=======
+
+>>>>>>> d47d4e5253c6d3986330dde6e7ee109d3f0be6fe
 function Day(props) {
   
   function onDelete() {
@@ -13,6 +17,7 @@ function Day(props) {
     
     const token = localStorage.getItem('token');
     
+<<<<<<< HEAD
     const dateId = props._id; 
     let config = {
       
@@ -29,67 +34,42 @@ function Day(props) {
     
   }
   
-  return (
-
-
-
- <div >
-
- 
-
-<table width = "70%" className ="table-display" border = "1px">
-  {/* <tr>
-    <th>Date</th>
-    <th>Product</th>
-    <th>Time</th>
-    <th>Duration</th>
-    <th>Price</th>
-    <th>fun</th>
+=======
+  function onDelete() {
+      const token = localStorage.getItem('token');
+      const orderId = props._id; 
+      let config = {
     
-  </tr> */}
-  <tr>
-    <td>{props.name}</td>
-    <td>{props.phoneNumber}</td>
-    <td>{props.date}</td>
-    <td>{props.productName}</td>
-    <td>{props.time}</td>
-    <td>{props.duration}</td>
-    <td>{props.price}</td>
-    <td><button onClick={onDelete} >Delete</button>
-           </td>
-  </tr>
-  
-</table>
-           
- {/* <label>Day </label>
-   <div className="props">{props.date}</div>
-   <label>Month </label>
-    <div className="props">{props.month}</div>
-      <label>Year </label>
-          <div className="props">{props.year}</div>
-          <br /> <br />
-          <label>Time </label>
-          <div className="props">{props.time}</div>
-           <br />
-          <label>Duration </label>
-          <div className="props">{props.duration}</div>
-           <br />
-          <label>Description </label>
-          <div className="props">{props.description}</div>
-           <br />
+        headers: { 
+          'Access-Control-Allow-Origin': '*', 
+          'Content-Type':'application/json', 
+          'Authorization':'Bearer '+token  
+        },
+      }
+      axios.delete('./orders/'+orderId, config )
+      .then(res => {
+          window.alert('Deleted', res)
+          return window.location.reload();      
+      })
+      .catch(Error)
+  }
 
-          <button onClick={onDelete} >Delete</button>
-           <br />
-
-          <label>DAY ID </label>
-          <div className="props">{props._id}</div>
- <br /> */}
-
- </div>
-
- );
+>>>>>>> d47d4e5253c6d3986330dde6e7ee109d3f0be6fe
+  return (
+    <div >
+      <table width = "70%" className ="table-display" border = "1px">
+        <tr>
+          <td>{props.name}</td>
+          <td>{props.phoneNumber}</td>
+          <td>{props.date}</td>
+          <td>{props.productName}</td>
+          <td>{props.time}</td>
+          <td>{props.duration}</td>
+          <td>{props.price}</td>
+          <td><button onClick={onDelete} >Delete</button></td>        
+        </tr> 
+      </table>
+    </div>
+  );
 }
-
-
-
 export default Day;

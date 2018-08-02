@@ -41,11 +41,10 @@
         .then( (res) => {   
 
           const times = res.data.day.map(day => day.time.time)
-          console.log('Hello')
-          console.dir({ 'res.data': res.data })
+          // console.dir({ 'res.data': res.data })
 
           const timeUsed = Object.assign({}, this.state, { used: times })
-          console.dir({ timeUsed })
+          // console.dir({ timeUsed })
 
           return this.setState(timeUsed);
 
@@ -53,7 +52,7 @@
 
         .catch( res => {
 
-          console.log(res)
+          // console.log(res)
           this.setState()
         })
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Day from "./Day";
+import {Row,Col,Table} from "reactstrap";
 
 function DayList(props) {
 
@@ -7,7 +8,7 @@ function DayList(props) {
 
     <div>
       <h1> Admin Board</h1>
-      <table width = "70%" className ="table-display" border = "1px">
+    <Table>
   <tr>
     <th>Name</th>
     <th>PhoneNo.</th>
@@ -19,7 +20,7 @@ function DayList(props) {
     <th>fun</th>
     
   </tr>
-  </table>
+  </Table>
       {
       	props.days.map((day, d) => 
       	<Day key={d} 
